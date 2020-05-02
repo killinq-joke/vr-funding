@@ -1,19 +1,39 @@
 //dependencies
 import React from "react";
 import ReactDOM from "react-dom";
+import thunk from "redux-thunk";
+import { combineReducers, createStore, compose, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
+//reducers
+import {
+  loginFormReducer,
+} from "./state/reducers";
 //styles
 import "./styles/index.css";
 //components
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
+const combinedReducer = combineReducers({
+  loginForm: loginFormReducer,
+});
+
+const store = createStore(
+  combinedReducer,
+  {},
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
+  <Router>
+    <Provider store={store}>
       <App />
-    </Router>
-  </React.StrictMode>,
+    </Provider>
+  </Router>,
   document.getElementById("root")
 );
 

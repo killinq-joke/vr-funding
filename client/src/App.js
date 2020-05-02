@@ -7,6 +7,8 @@ import "./styles/App.css";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import ProjectList from "./components/ProjectList";
+import YourProjects from "./components/YourProjects";
+import FundedProjects from "./components/FundedProjects"
 
 const App = () => {
   const isLogged = !!localStorage.getItem("token");
@@ -19,7 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <nav>
-        <Link to="/home">
+        <Link to="/">
           <h1>VR-Funding</h1>
         </Link>
 
@@ -46,9 +48,12 @@ const App = () => {
           </div>
         )}
       </nav>
+
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <PrivateRoute path="/projects" component={ProjectList} />
+      <PrivateRoute path="/yourprojects" component={YourProjects} />
+      <PrivateRoute path="/funded" component={FundedProjects} />
     </div>
   );
 };

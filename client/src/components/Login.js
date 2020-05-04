@@ -6,19 +6,19 @@ import { useHistory } from "react-router-dom";
 import * as actionCreators from "../state/actionCreators";
 
 
-const Login = ({ userForm, onLogin }) => {
-  const history = useHistory()
+const Login = ({ userForm, changeHandler, onLogin }) => {
+  const history = useHistory();
 
   return (
     <>
       <form>
         <label>
           username:
-          <input />
+          <input name="username" onChange={changeHandler} />
         </label>
         <label>
           password:
-          <input />
+          <input name="password" onChange={changeHandler} />
         </label>
         <button type="button" onClick={() => onLogin(userForm, history)}>
           login

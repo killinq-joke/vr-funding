@@ -24,7 +24,8 @@ export const onLogin = (credentials, history) => (dispatch) => {
          axios()  
            .post("/auth/login", credentials)
            .then((res) => {
-             console.log(res);
+             localStorage.setItem("token", res.data.token);
+             localStorage.setItem("user_id", res.data.id);
            })
            .catch((err) => {
              console.log(err);

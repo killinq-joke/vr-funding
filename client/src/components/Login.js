@@ -2,20 +2,28 @@
 import React from "react"
 import { connect } from "react-redux";
 //components
-import UserForm from "./UserForm"
 import * as actionCreators from "../state/actionCreators";
 
 const Login = () => {
   return (
     <>
-      <UserForm />
+      <form>
+        <label>
+          username:
+          <input />
+        </label>
+        <label>
+          password:
+          <input />
+        </label>
+      </form>
     </>
   );
 }
 
 function mapStateToProps(state) {
   return {
-    loginForm: state.loginForm,
+    userForm: state.userForm,
     spinner: state.spinner,
   };
 }

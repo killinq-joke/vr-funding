@@ -40,10 +40,10 @@ const App = () => {
         ) : (
           <div>
             <Link to="/signup">
-              <button>Sign Up</button>
+              <button>Sign up</button>
             </Link>
             <Link to="/login">
-              <button>Login</button>
+              <button>Log in</button>
             </Link>
           </div>
         )}

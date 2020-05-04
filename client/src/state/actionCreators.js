@@ -19,14 +19,14 @@ export const onSignup = (credentials, history) => (dispatch) => {
     });
 };
 
-export const onLogin = (credentials) => (dispatch) => {
-  dispatch({ type: types.LOGIN });
-  axios()
-    .post("/auth/login", credentials)
-    .then((res) => {
-        console.log(res)
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+export const onLogin = (credentials, history) => (dispatch) => {
+         dispatch({ type: types.LOGIN });
+         axios()  
+           .post("/auth/login", credentials)
+           .then((res) => {
+             console.log(res);
+           })
+           .catch((err) => {
+             console.log(err);
+           });
+       };

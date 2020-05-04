@@ -1,10 +1,14 @@
 //dependencies
 import React from "react"
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 //components
 import * as actionCreators from "../state/actionCreators";
 
-const Login = () => {
+
+const Login = ({ userForm, onLogin }) => {
+  const history = useHistory()
+
   return (
     <>
       <form>
@@ -16,10 +20,13 @@ const Login = () => {
           password:
           <input />
         </label>
+        <button type="button" onClick={() => onLogin(userForm, history)}>
+          login
+        </button>
       </form>
     </>
   );
-}
+};
 
 function mapStateToProps(state) {
   return {

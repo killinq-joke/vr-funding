@@ -26,6 +26,7 @@ export const onLogin = (credentials, history) => (dispatch) => {
            .then((res) => {
              localStorage.setItem("token", res.data.token);
              localStorage.setItem("user_id", res.data.id);
+             history.push("/projects");
            })
            .catch((err) => {
              console.log(err);

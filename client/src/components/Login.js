@@ -1,10 +1,9 @@
 //dependencies
-import React from "react"
+import React from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 //components
 import * as actionCreators from "../state/actionCreators";
-
 
 const Login = ({ userForm, changeHandler, onLogin }) => {
   const history = useHistory();

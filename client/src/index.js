@@ -6,9 +6,7 @@ import { combineReducers, createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 //reducers
-import {
-  userFormReducer,
-} from "./state/reducers";
+import { userFormReducer } from "./state/reducers";
 //styles
 import "./styles/index.css";
 //components

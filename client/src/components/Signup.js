@@ -12,11 +12,19 @@ const Signup = ({ userForm, changeHandler, onSignup }) => {
       <form>
         <label>
           username:
-          <input name="username" onChange={changeHandler} value={userForm.username} />
+          <input
+            name="username"
+            onChange={changeHandler}
+            value={userForm.username}
+          />
         </label>
         <label>
           password:
-          <input name="password" onChange={changeHandler} value={userForm.password} />
+          <input
+            name="password"
+            onChange={changeHandler}
+            value={userForm.password}
+          />
         </label>
         <button type="button" onClick={() => onSignup(userForm, history)}>
           signup

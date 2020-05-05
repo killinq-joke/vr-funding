@@ -8,7 +8,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import ProjectList from "./components/ProjectList";
 import YourProjects from "./components/YourProjects";
-import FundedProjects from "./components/FundedProjects"
+import FundedProjects from "./components/FundedProjects";
 
 const App = () => {
   const isLogged = !!localStorage.getItem("token");

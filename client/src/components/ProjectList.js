@@ -1,5 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "../utils/axiosWithAuth";
+//components
+import Project from "./Project"
 
 export default function ProjectList() {
-  return <>project list</>;
+    const [projects, setProjects] = useState([])
+    useEffect(() => {
+        axios()
+        .get("/projects")
+        .then(res => {
+            console.log(res.data.projects)
+            setProjects(res.data.projects);
+        }).catch(err => {
+            console.log(err)
+        })
+    }, [])
+  return (
+    <>
+      project list
+      {projects.map(project => {
+          return <Project project={project}/>
+      })}
+    </>
+  );
 }

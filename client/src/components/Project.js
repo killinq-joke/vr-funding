@@ -1,8 +1,12 @@
 import React from "react"
 
-const Project = (props) => {
-    console.log(props)
-    return <><h2>name:</h2></>
+const Project = ({project}) => {
+    return (
+      <>
+        <h4>{project.name}</h4>
+        
+      </>
+    );
 }
 
 export default Project

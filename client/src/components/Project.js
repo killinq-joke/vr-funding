@@ -5,7 +5,7 @@ const Project = ({project}) => {
       <>
         <h4>{project.name}</h4>
         <p>{project.description}</p>
-        
+        <p>category: {project.category}</p>
       </>
     );
 }

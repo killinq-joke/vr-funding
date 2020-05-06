@@ -15,7 +15,7 @@ const App = () => {
   const history = useHistory();
   const logout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("User Id");
+    localStorage.removeItem("user_id");
     history.push("/home");
   };
   return (

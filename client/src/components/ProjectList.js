@@ -19,7 +19,7 @@ export default function ProjectList() {
     <>
       project list
       {projects.map(project => {
-          return <Project project={project}/>
+          return <Project key={project.id} project={project}/>
       })}
     </>
   );

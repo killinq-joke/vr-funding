@@ -1,7 +1,7 @@
 import React from "react"
 
 const Project = ({project}) => {
-  console.log(project)
+  
     return (
       <>
         <h4>{project.name}</h4>

@@ -9,7 +9,6 @@ export default function ProjectList() {
         axios()
         .get("/projects")
         .then(res => {
-            console.log(res.data.projects)
             setProjects(res.data.projects);
         }).catch(err => {
             console.log(err)

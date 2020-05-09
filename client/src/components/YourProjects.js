@@ -1,17 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../utils/axiosWithAuth";
 
 export default function YourProjects() {
+  const [projects, setProjects] = useState([])
+  const [error, setError] = useState("")
   const creator_id = localStorage.getItem("user_id")
   useEffect(() => {
     axios()
-      .get(`/creator/${creator_id}`)
+      .get(`/projects/creator/6`)
       .then((res) => {
         console.log(res);
       })
       .catch((err) => {
-        console.log(err);
+        setError(err.response.data.message);
       });
   }, [])
-  return <>your projects</>;
+  if (projects.length !== 0) {
+    return <>your projects</>;
+  } else {
+    return (
+      <>
+        {error}
+        <button>create a project</button>
+      </>
+    );
+  }
+  
 }

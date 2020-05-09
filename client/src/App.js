@@ -50,7 +50,7 @@ const App = () => {
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <PrivateRoute path="/projects" component={ProjectList} />
-      <PrivateRoute path="/yourprojects" component={YourProjects} />
+      <PrivateRoute path="/dashboard"><YourProjects /></PrivateRoute> 
       <PrivateRoute path="/funded" component={FundedProjects} />
     </div>
   );

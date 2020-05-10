@@ -9,9 +9,8 @@ export default function YourProjects() {
   const creator_id = localStorage.getItem("user_id");
   useEffect(() => {
     axios()
-      .get(`/projects/creator/7`)
+      .get(`/projects/creator/${creator_id}`)
       .then((res) => {
-        console.log(res.data.projects);
         setProjects(res.data.projects);
       })
       .catch((err) => {
@@ -22,6 +21,7 @@ export default function YourProjects() {
     return (
       <>
         your projects
+        <button>create a project</button>
         {projects.map((project) => {
           return <Project key={project.id} project={project} />;
         })}

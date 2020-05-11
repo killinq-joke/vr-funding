@@ -30,7 +30,7 @@ export default function YourProjects() {
   } else {
     return (
       <>
-        {error}
+        you have no project currently
         <button>create a project</button>
       </>
     );

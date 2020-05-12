@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import ProjectList from "./components/ProjectList";
 import YourProjects from "./components/YourProjects";
+import ProjectById from "./components/ProjectById";
 import FundedProjects from "./components/FundedProjects";
 
 const App = () => {
@@ -54,7 +55,7 @@ const App = () => {
         <YourProjects />
       </PrivateRoute>
       <PrivateRoute path="/funded" component={FundedProjects} />
-      <PrivateRoute path="/fund/:project_id" component={FundedProjects} />
+      <PrivateRoute path="/fund/:project_id" component={ProjectById} />
     </div>
   );
 };

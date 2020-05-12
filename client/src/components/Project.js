@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Project = ({ project }) => {
   const user_id = Number(localStorage.getItem("user_id"));
@@ -12,7 +13,7 @@ const Project = ({ project }) => {
       <p>
         funding: {project.funding} / {project.funding_goal}
       </p>
-      {user_id === project.creator_id ? null : <button>fund</button>}
+      {user_id === project.creator_id ? null : <Link to={`/fund/${project.id}`}>fund</Link>}
     </>
   );
 };

@@ -32,8 +32,8 @@ const App = () => {
             </Link>
             <Link to="/dashboard">
               <button>Dashboard</button>
-            </Link>  
-              <button onClick={logout}>Logout</button>
+            </Link>
+            <button onClick={logout}>Logout</button>
           </div>
         ) : (
           <div>
@@ -50,8 +50,11 @@ const App = () => {
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <PrivateRoute path="/projects" component={ProjectList} />
-      <PrivateRoute path="/dashboard"><YourProjects /></PrivateRoute> 
+      <PrivateRoute path="/dashboard">
+        <YourProjects />
+      </PrivateRoute>
       <PrivateRoute path="/funded" component={FundedProjects} />
+      <PrivateRoute path="/fund/:project_id" component={FundedProjects} />
     </div>
   );
 };

@@ -12,7 +12,6 @@ export default function ProjectById() {
       .get(`/projects/${project_id}`)
       .then((res) => {
         setProject(res.data);
-        console.log(res.data.name);
       })
       .catch((err) => {
         console.log(err);

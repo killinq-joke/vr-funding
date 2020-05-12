@@ -8,8 +8,8 @@ export default function ProjectList() {
     useEffect(() => {
         axios()
         .get("/projects")
-        .then(res => {
-            setProjects(res.data.projects);
+        .then(async res => {
+            await setProjects(res.data.projects);
         }).catch(err => {
             console.log(err)
         })

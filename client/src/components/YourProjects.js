@@ -5,7 +5,7 @@ import Project from "./Project";
 
 export default function YourProjects() {
   const [projects, setProjects] = useState([]);
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
   const creator_id = localStorage.getItem("user_id");
   useEffect(() => {
     axios()
@@ -14,7 +14,7 @@ export default function YourProjects() {
         setProjects(res.data.projects);
       })
       .catch((err) => {
-        setError(err.response.data.message);
+        // setError(err.response.data.message);
       });
   }, []);
   if (projects.length !== 0) {

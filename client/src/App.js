@@ -47,6 +47,13 @@ const App = () => {
           </div>
         )}
       </nav>
+      <nav>
+        <Link to="/art">Art</Link>
+        <Link to="/cinema">Cinema</Link>
+        <Link to="/health">Health</Link>
+        <Link to="/gaming">Gaming</Link>
+        <Link to="/music">Music</Link>
+      </nav>
 
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />

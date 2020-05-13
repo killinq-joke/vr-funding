@@ -10,6 +10,7 @@ import ProjectList from "./components/ProjectList";
 import YourProjects from "./components/YourProjects";
 import ProjectById from "./components/ProjectById";
 import FundedProjects from "./components/FundedProjects";
+import ProjectsByCategory from "./components/ProjectsByCategory";
 
 const App = () => {
   const isLogged = !!localStorage.getItem("token");
@@ -47,6 +48,23 @@ const App = () => {
           </div>
         )}
       </nav>
+      <nav>
+        <Link to="/category/art">
+          <button>Art</button>
+        </Link>
+        <Link to="/category/cinema">
+          <button>Cinema</button>
+        </Link>
+        <Link to="/category/health">
+          <button>Health</button>
+        </Link>
+        <Link to="/category/gaming">
+          <button>Gaming</button>
+        </Link>
+        <Link to="/category/music">
+          <button>Music</button>
+        </Link>
+      </nav>
 
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
@@ -56,6 +74,11 @@ const App = () => {
       </PrivateRoute>
       <PrivateRoute path="/funded" component={FundedProjects} />
       <PrivateRoute path="/fund/:project_id" component={ProjectById} />
+      <PrivateRoute path="/category/:category" component={ProjectsByCategory} />
+      {/* <PrivateRoute path="/cinema" component={ProjectById} />
+      <PrivateRoute path="/health" component={ProjectById} />
+      <PrivateRoute path="/gaming" component={ProjectById} />
+      <PrivateRoute path="/music" component={ProjectById} /> */}
     </div>
   );
 };

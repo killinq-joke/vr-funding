@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 const Project = ({ project }) => {
   const user_id = Number(localStorage.getItem("user_id"));
   const {project_id} = useParams()
-  console.log(project_id, project.id)
+  
   return (
     <>
       <h4>{project.name}</h4>
@@ -14,7 +14,7 @@ const Project = ({ project }) => {
       <p>
         funding: {project.funding} / {project.funding_goal}
       </p>
-      {user_id === project.creator_id || project.id === Number(project_id) ? <></> : <Link to={`/fund/${project.id}`}>fund</Link>}
+      {user_id === project.creator_id || project.id === Number(project_id) ? null : <Link to={`/fund/${project.id}`}>fund</Link>}
     </>
   );
 };

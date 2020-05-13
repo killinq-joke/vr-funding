@@ -10,6 +10,7 @@ import ProjectList from "./components/ProjectList";
 import YourProjects from "./components/YourProjects";
 import ProjectById from "./components/ProjectById";
 import FundedProjects from "./components/FundedProjects";
+import ProjectsByCategory from "./components/ProjectsByCategory";
 
 const App = () => {
   const isLogged = !!localStorage.getItem("token");
@@ -48,19 +49,19 @@ const App = () => {
         )}
       </nav>
       <nav>
-        <Link to="/art">
+        <Link to="/category/art">
           <button>Art</button>
         </Link>
-        <Link to="/cinema">
+        <Link to="/category/cinema">
           <button>Cinema</button>
         </Link>
-        <Link to="/health">
+        <Link to="/category/health">
           <button>Health</button>
         </Link>
-        <Link to="/gaming">
+        <Link to="/category/gaming">
           <button>Gaming</button>
         </Link>
-        <Link to="/music">
+        <Link to="/category/music">
           <button>Music</button>
         </Link>
       </nav>
@@ -73,7 +74,7 @@ const App = () => {
       </PrivateRoute>
       <PrivateRoute path="/funded" component={FundedProjects} />
       <PrivateRoute path="/fund/:project_id" component={ProjectById} />
-      <PrivateRoute path="/category/:category" component={ProjectById} />
+      <PrivateRoute path="/category/:category" component={ProjectsByCategory} />
       {/* <PrivateRoute path="/cinema" component={ProjectById} />
       <PrivateRoute path="/health" component={ProjectById} />
       <PrivateRoute path="/gaming" component={ProjectById} />

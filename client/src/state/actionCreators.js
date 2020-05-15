@@ -10,7 +10,6 @@ export const onSignup = (credentials, history) => (dispatch) => {
   axios()
     .post("/auth/register", credentials)
     .then((res) => {
-      console.log(res);
       history.push("/login");
     })
     .catch((err) => {

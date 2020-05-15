@@ -10,7 +10,6 @@ export default function ProjectList() {
         .get("/projects")
         .then(async res => {
             await setProjects(res.data.projects);
-            console.log(res.data)
         }).catch(err => {
             console.log(err)
         })

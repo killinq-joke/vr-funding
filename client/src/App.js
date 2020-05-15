@@ -49,19 +49,19 @@ const App = () => {
         )}
       </nav>
       <nav>
-        <Link to="/category/art">
+        <Link to="/art">
           <button>Art</button>
         </Link>
-        <Link to="/category/cinema">
+        <Link to="/cinema">
           <button>Cinema</button>
         </Link>
-        <Link to="/category/health">
+        <Link to="/health">
           <button>Health</button>
         </Link>
-        <Link to="/category/gaming">
+        <Link to="/gaming">
           <button>Gaming</button>
         </Link>
-        <Link to="/category/music">
+        <Link to="/music">
           <button>Music</button>
         </Link>
       </nav>
@@ -74,11 +74,11 @@ const App = () => {
       </PrivateRoute>
       <PrivateRoute path="/funded" component={FundedProjects} />
       <PrivateRoute path="/fund/:project_id" component={ProjectById} />
-      <PrivateRoute path="/category/:category" component={ProjectsByCategory} />
-      {/* <PrivateRoute path="/cinema" component={ProjectById} />
-      <PrivateRoute path="/health" component={ProjectById} />
-      <PrivateRoute path="/gaming" component={ProjectById} />
-      <PrivateRoute path="/music" component={ProjectById} /> */}
+      <PrivateRoute path="/art" component={ProjectsByCategory} />
+      <PrivateRoute path="/cinema" component={ProjectsByCategory} />
+      <PrivateRoute path="/health" component={ProjectsByCategory} />
+      <PrivateRoute path="/gaming" component={ProjectsByCategory} />
+      <PrivateRoute path="/music" component={ProjectsByCategory} />
     </div>
   );
 };

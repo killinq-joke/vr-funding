@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../utils/axiosWithAuth";
 
 export default function FundedProjects() {
-  
+  const [error, setError] = useState("")
   const funder_id = localStorage.getItem("user_id")
 
   useEffect(() => {
@@ -12,8 +12,8 @@ export default function FundedProjects() {
         console.log(res);
       })
       .catch((err) => {
-        console.log(err.response.data.message);
+        setError(err.response.data.message);
       });
   }, []);
-  return <>funded projects</>;
+  return <>{error}</>;
 }

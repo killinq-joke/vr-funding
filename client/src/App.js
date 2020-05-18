@@ -11,6 +11,7 @@ import YourProjects from "./components/YourProjects";
 import ProjectById from "./components/ProjectById";
 import FundedProjects from "./components/FundedProjects";
 import ProjectsByCategory from "./components/ProjectsByCategory";
+import CategoryNav from "./components/CategoryNav"
 
 const App = () => {
   const isLogged = !!localStorage.getItem("token");
@@ -48,24 +49,7 @@ const App = () => {
           </div>
         )}
       </nav>
-      <nav>
-        <Link to="/art">
-          <button>Art</button>
-        </Link>
-        <Link to="/cinema">
-          <button>Cinema</button>
-        </Link>
-        <Link to="/health">
-          <button>Health</button>
-        </Link>
-        <Link to="/gaming">
-          <button>Gaming</button>
-        </Link>
-        <Link to="/music">
-          <button>Music</button>
-        </Link>
-      </nav>
-
+      {isLogged ? <CategoryNav /> : <></>}
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <PrivateRoute path="/projects" component={ProjectList} />

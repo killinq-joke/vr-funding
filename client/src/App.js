@@ -49,7 +49,7 @@ const App = () => {
           </div>
         )}
       </nav>
-      <CategoryNav />
+      {isLogged ? <CategoryNav /> : <></>}
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <PrivateRoute path="/projects" component={ProjectList} />

@@ -39,17 +39,17 @@ const App = () => {
             <button onClick={logout}>Logout</button>
           </div>
         ) : (
-          <div>
+          <>
             <Link to="/signup">
               <button>Sign up</button>
             </Link>
             <Link to="/login">
               <button>Log in</button>
             </Link>
-          </div>
+          </>
         )}
       </nav>
-      {isLogged ? <CategoryNav /> : <></>}
+      {isLogged ? <CategoryNav /> : null}
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <PrivateRoute path="/projects" component={ProjectList} />

@@ -5,8 +5,10 @@ import Project from "./Project";
 
 export default function YourProjects() {
   const [projects, setProjects] = useState([]);
-  // const [error, setError] = useState("");
+  const [creating, setCreating] = useState(false);
+  const [error, setError] = useState("");
   const creator_id = localStorage.getItem("user_id");
+  
   useEffect(() => {
     axios()
       .get(`/projects/creator/${creator_id}`)
@@ -14,25 +16,45 @@ export default function YourProjects() {
         setProjects(res.data.projects);
       })
       .catch((err) => {
-        // setError(err.response.data.message);
+        setError(err.response.data.message);
       });
   }, []);
-  if (projects.length !== 0) {
-    return (
-      <>
-        your projects
-        <button>create a project</button>
-        {projects.map((project) => {
-          return <Project key={project.id} project={project} />;
-        })}
-      </>
-    );
-  } else {
-    return (
-      <>
-        you have no project currently
-        <button>create a project</button>
-      </>
-    );
-  }
+
+  const createProject = () => {
+    setCreating(!creating);
+  };
+
+  return (
+    <>
+      {error || "your projects"}
+      <button onClick={createProject}>create a new project</button>
+      {creating ? (
+        <form>
+          <label>
+            Name:
+            <input />
+          </label>
+          <label>
+            Description:
+            <input />
+          </label>
+          <label>
+            Image:
+            <input />
+          </label>
+          <label>
+            Category:
+            <input />
+          </label>
+          <label>
+            Funding Goal:
+            <input />
+          </label>
+        </form>
+      ) : null}
+      {projects.map((project) => {
+        return <Project key={project.id} project={project} />;
+      })}
+    </>
+  );
 }

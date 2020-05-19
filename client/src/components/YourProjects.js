@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "../utils/axiosWithAuth";
 
 import Project from "./Project";
+import CreateFormLabel from "../utils/CreateFormLabel";
 
 export default function YourProjects() {
   const [projects, setProjects] = useState([]);
   const [creating, setCreating] = useState(false);
   const [error, setError] = useState("");
   const creator_id = localStorage.getItem("user_id");
-  
+
   useEffect(() => {
     axios()
       .get(`/projects/creator/${creator_id}`)
@@ -30,26 +31,11 @@ export default function YourProjects() {
       <button onClick={createProject}>create a new project</button>
       {creating ? (
         <form>
-          <label>
-            Name:
-            <input />
-          </label>
-          <label>
-            Description:
-            <input />
-          </label>
-          <label>
-            Image:
-            <input />
-          </label>
-          <label>
-            Category:
-            <input />
-          </label>
-          <label>
-            Funding Goal:
-            <input />
-          </label>
+          <CreateFormLabel label="Name" />
+          <CreateFormLabel label="Description" />
+          <CreateFormLabel label="Image" />
+          <CreateFormLabel label="Category" />
+          <CreateFormLabel label="Funding Goal" />
         </form>
       ) : null}
       {projects.map((project) => {

@@ -1,5 +1,7 @@
 # vr-funding
 
+TODO - Add fund endpoint (post users-projects)
+
 TODO - Use Redux for project handling
 
 TODO - Create project

@@ -18,9 +18,21 @@ export default function ProjectById() {
       });
   }, []);
 
+  const fund = () => {
+    axios()
+      .post(`/funder`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <Project key={project_id} project={project} />
+      <button onClick={fund}>fund</button>
     </>
   );
 }
